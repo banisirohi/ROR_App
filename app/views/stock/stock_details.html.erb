@@ -1,0 +1,36 @@
+  <h4>Stock prices for "YAHOO","APPLE","GOOGLE","MICROSOFT","FACEBOOK"</h4>
+  <div class="buttonContainer">
+    <%= link_to "Stop", stock_getStockDetails_path( is_Running: '0'), remote: true, cache:false,id: "btnStop", class:"hideOnLoad" %>
+    <%= link_to "Start", stock_getStockDetails_path( is_Running: '1'), remote: true, cache:false,id: "btnStart", class:"hideOnLoad" %>
+    <%= link_to "Run Now", stock_getStockDetails_path( is_Running: '1'), remote: true, cache:false %>
+  </div>
+  <div class="showOnError"></div>
+  <div class="serviceStatus"></div>
+
+  <div id="container">
+    <p id="dataStatus" class="showOnError"></p>
+  <div id="table">
+  <table id="tblStockDetails">
+    <caption>
+    </caption>
+    <colgroup />
+    <colgroup span="2" title="title" />
+    <thead class="hideOnError">
+    <tr>
+      <th scope="col" class="hide">Stock Name</th>
+      <th scope="col" class="hide">Date</th>
+      <th scope="col" class="hide">Price at Close</th>
+    </tr>
+    </thead>
+    <tbody id="stockContent" class="hideOnError">
+    </tbody>
+  </table>
+  </div>
+  <div id="chart"></div>
+  </div>
+  <%= render :partial => "shared/footer", :locals =>
+      {:value =>@message }, :remote=>true %>
+
+
+
+
