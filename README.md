@@ -1,6 +1,6 @@
 # README
 
-* This applicaction captures financial data using a web service and report on it.
+* This application captures financial data using a web service and report on it.
 
 * Ruby version: ruby 2.4.0
 
